@@ -125,6 +125,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Đường dẫn thư mục để lưu các tệp media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Thư mục media nằm trong thư mục dự án
 

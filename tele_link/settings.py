@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Thêm dòng này
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -119,19 +120,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
-
+# Cấu hình Static
+STATIC_URL = '/static/'
+# Thư mục chứa tệp static (sẽ được sử dụng bởi Whitenoise để phục vụ tệp)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Cấu hình các tệp static với Whitenoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Đường dẫn thư mục để lưu các tệp media
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Thư mục media nằm trong thư mục dự án
-
-# URL để truy cập các tệp media
+# Cấu hình Media
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

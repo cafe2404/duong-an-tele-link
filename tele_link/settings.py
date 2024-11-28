@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hks*fkq27qsw@1-n)$yb+--p(4b$xg#y0!cnzwv8!rr0-z57+a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["c4f0-42-116-146-101.ngrok-free.app", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["160.187.246.31", "127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise',
     'link',
 ]
 
@@ -137,4 +138,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CSRF_TRUSTED_ORIGINS = ['https://c4f0-42-116-146-101.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['http://160.187.246.31']

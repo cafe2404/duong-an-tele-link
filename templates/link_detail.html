@@ -36,7 +36,7 @@
             <img src="{{ link.image.url }}" alt="{{ link.title }}">
         </div>
         <h1 class="title">{{ link.title }}</h1>
-        <a href="{{ link.url }}" class="telegram-btn bounce" id="telegram">
+        <a  class="telegram-btn bounce" id="telegram">
             <div class="telegram-btn_content">
                 <div class="telegram-btn_content-icon">
                     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="">
@@ -46,15 +46,9 @@
         </a>
     </div>
     
-     <!-- <script>
+     <script>
         function randomUrl(){
-            const urls = [
-                "https://t.me/phuong9636",
-                "https://t.me/chuyenvienthuyduong",
-                "https://t.me/Dung8098",
-                "https://t.me/Thutranng99",
-                "https://t.me/tuyet3587",
-            ];
+            const urls = '{{ link.url|escapejs }}'.split(',')
             const random = Math.floor(Math.random() * urls.length);   
             return urls[random]
         }
@@ -62,6 +56,6 @@
             var url = randomUrl()
             window.location.href = url
         })
-    </script> -->
+    </script>
 </body>
 </html>
